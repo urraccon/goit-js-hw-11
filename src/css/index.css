@@ -35,18 +35,20 @@ button {
   /* width: fit-content; */
   /* position: absolute; */
   background-color: white;
-  border: none;
-  border-radius: 2px;
+  /* border: 2px solid white; */
+  border-radius: 3px;
   /* left: 300px; */
   /* right: 10px; */
   /* transform: translateX(-10%); */
-  height: 33px;
-  width: 33px;
+  height: 35.2px;
+  width: 35.2px;
 }
 
 svg {
-  height: 33px;
-  width: 33px;
+  height: 30px;
+  width: 30px;
+  border: 2px solid white;
+  border-radius: 5px;
 }
 
 .search-box {
@@ -56,4 +58,9 @@ svg {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 1px;
+}
+
+button:focus {
+  background-color: rgb(226, 142, 254);
 }

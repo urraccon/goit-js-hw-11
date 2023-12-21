@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
+    <form class="search-from" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">
+        <svg class="search-icon">
+          <use href="./svg/icons.svg#search"></use>
+        </svg>
+      </button>
+    </form>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

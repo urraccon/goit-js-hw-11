@@ -7,9 +7,9 @@
 form {
   padding: 12px;
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  position: relative;
+  /* flex-direction: row; */
+  /* gap: 10px; */
+  /* position: relative; */
   /* align-items: center; */
   justify-content: center;
   background-color: #613287;
@@ -19,11 +19,12 @@ form {
 input {
   font-size: 16px;
   padding: 0px 10px;
-  padding-right: 43px;
+  /* padding-right: 43px; */
   height: 30px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border: 2px solid rgba(0, 0, 0, 0.8);
   /* position: relative; */
+  /* left: 40.6%; */
 }
 
 /* input {
@@ -32,13 +33,27 @@ input {
 
 button {
   /* width: fit-content; */
-  position: absolute;
-  background-color: transparent;
+  /* position: absolute; */
+  background-color: white;
   border: none;
-  left: 859px;
+  border-radius: 2px;
+  /* left: 300px; */
+  /* right: 10px; */
+  /* transform: translateX(-10%); */
+  height: 33px;
+  width: 33px;
 }
 
 svg {
   height: 33px;
   width: 33px;
+}
+
+.search-box {
+  /* position: relative; */
+  /* width: 250.6px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }

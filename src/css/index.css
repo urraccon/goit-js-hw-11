@@ -133,13 +133,13 @@ button[type='submit']:hover {
 }
 
 use {
-  fill: rgb(111, 45, 168);
-}
-
-button[type='submit']:hover use,
-button[type='submit']:focus use {
   fill: rgb(175, 105, 238);
 }
+
+/* button[type='submit']:hover use,
+button[type='submit']:focus use {
+  fill: rgb(175, 105, 238);
+} */
 
 button.load-more {
   /* position: absolute; */
@@ -148,7 +148,7 @@ button.load-more {
   padding: 0px 20px;
   font-size: 14px;
   color: white;
-  background-color: rgb(111, 45, 168);
+  background-color: rgb(175, 105, 238);
   border-radius: 5px;
   border: 2px solid rgb(175, 105, 238);
   text-transform: uppercase;
@@ -158,11 +158,11 @@ button.load-more {
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-button.load-more:hover,
+/* button.load-more:hover,
 button.load-more:focus {
   background-color: rgba(175, 105, 238);
   border: 2px solid rgb(111, 45, 168);
-}
+} */
 
 div.load-more-container {
   display: flex;

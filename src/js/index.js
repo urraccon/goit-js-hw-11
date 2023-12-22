@@ -115,13 +115,10 @@ function addResultsToResultsList(results) {
   //   console.log(imagesLoaded);
 }
 
-function createCardList(cards) {
+function createCardList(items) {
   //   console.log(cards);
   debugger;
-  return cards.reduce(
-    (imageCards, image) => renderCard(image) + imageCards,
-    ' '
-  );
+  return items.reduce((itemCards, item) => renderCard(item) + itemCards, ' ');
   //   console.log(cardList);
   //   return cardList;
 }

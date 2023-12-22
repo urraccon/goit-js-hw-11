@@ -81,6 +81,7 @@ function loadResults(term) {
       addCardsToPage(imageCards);
     })
     .then(showLoadMoreBtn)
+    .then(nextPage)
     .catch(err => {
       console.log('An error occurred while loading the images', err);
     })

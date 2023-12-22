@@ -54,6 +54,7 @@ function loadResults(term) {
       const loadedResultsNo = imageList.length;
       if (loadedResultsNo > 0) {
         if (loadedResultsNo === totalResultsNo) {
+          debugger;
           noNewResults();
           return;
         }

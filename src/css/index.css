@@ -58,10 +58,76 @@ svg {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 7px;
 }
 
-button:focus {
-  background-color: rgb(226, 142, 254);
+button:focus,
+button:hover {
+  /* background-color: rgb(226, 142, 254); */
   border-radius: 5px;
+}
+
+.photo-card {
+  /* height: 150px; */
+  /* width: 360px;
+  height: 360px; */
+  /* display: flex;
+  flex-direction: row; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 2px solid rgb(226, 142, 254); */
+  align-items: center;
+  box-shadow: rgb(226, 142, 254) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  /* gap: 50px; */
+  border-radius: 5px;
+}
+
+.photo {
+  height: 240px;
+  width: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-card img {
+  /* width: 360px; */
+  height: 370px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 15px;
+  justify-content: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 15px;
+  margin: 30px;
+}
+
+use {
+  fill: #613287;
+}
+
+button:hover use,
+button:focus use {
+  fill: rgb(226, 142, 254);
 }

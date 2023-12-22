@@ -206,6 +206,9 @@ function noNewResults() {
   Notify.warning(`We're sorry, but you've reached the end of search results.`);
 }
 
+function nextPage() {
+  imagesPage += 1;
+}
 // searchResults('2', 1);
 
 // load more results
@@ -214,5 +217,6 @@ loadMoreBtn.addEventListener('click', loadMoreResults);
 function loadMoreResults() {
   hideLoadMoreBtn();
   loadResults(filledText);
+  nextPage();
 }
 //------------------------------------------------------------------

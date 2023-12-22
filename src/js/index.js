@@ -111,13 +111,14 @@ function failureCase() {
 }
 
 function addResultsToResultsList(results) {
-  return imageList.push(results);
+  imageList.concat(results);
+  return imageList;
   //   console.log(imagesLoaded);
 }
 
 function createCardList(items) {
   //   console.log(cards);
-  debugger;
+  //   debugger;
   return items.reduce((itemCards, item) => renderCard(item) + itemCards, ' ');
   //   console.log(cardList);
   //   return cardList;

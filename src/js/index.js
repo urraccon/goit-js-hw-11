@@ -207,7 +207,7 @@ function noNewResults() {
 
 // load more results
 
-loadMoreBtn.addEventListeners('click', loadMoreResults());
+loadMoreBtn.addEventListeners('click', loadMoreResults);
 function loadMoreResults() {
   hideLoadMoreBtn();
   loadResults(filledText);

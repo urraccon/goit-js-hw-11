@@ -17,8 +17,7 @@ form {
   /* align-items: center; */
   justify-content: center;
   background-color: rgb(111, 45, 168);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 input {
@@ -26,8 +25,7 @@ input {
   padding: 2px 12px;
   /* padding-right: 43px; */
   height: 30px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   border: 2px solid rgba(0, 0, 0, 0.8);
   /* position: relative; */
   /* left: 40.6%; */
@@ -87,8 +85,7 @@ button[type='submit']:hover {
   justify-content: center;
   /* border: 2px solid rgb(226, 142, 254); */
   align-items: center;
-  box-shadow: rgba(175, 105, 238) 0px 1px 3px 0px,
-    rgba(175, 105, 238) 0px 1px 2px 0px;
+  box-shadow: rgb(175, 105, 238) 0px 3px 3px 0px;
   /* gap: 50px; */
   border-radius: 5px;
 }
@@ -154,8 +151,7 @@ button.load-more {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 30px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
 /* button.load-more:hover,

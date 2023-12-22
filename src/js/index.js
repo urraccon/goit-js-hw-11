@@ -9,29 +9,38 @@ const gallery = document.querySelector('div.gallery');
 const searchBox = document.querySelector('form.search-form');
 const loadMoreBtn = document.querySelector('button.load-more');
 // console.dir(loadMoreBtn);
-let imagesLoaded = [];
-let imagePage = 1;
+let imageList = [];
+let imagesPage = 1;
+let filledText = '';
 // console.dir(searchBox);
+
+hideLoadMoreBtn();
 
 searchBox.addEventListener('submit', pressBtn);
 
-function pressBtn(inputValue) {
+function pressBtn(inputField) {
   //   debugger;
   //   console.log(inputValue);
   inputValue.preventDefault();
-  const searchWord = inputValue.target[0].value;
+  filledText = inputField.target[0].value;
   //   console.log(searchWord);
-  loadResults(searchWord);
+  newSearch(filledText);
 }
+
+//
+function newSearch(term) {
+  clearResults();
+  loadResults(term);
+}
+
+//
 
 // dispaly results
 function loadResults(term) {
   //   debugger;
-  imagePage = 1;
-  imagesLoaded = [];
-  hideLoadMoreBtn();
+  //   clearPage();
   new Promise(resolve => {
-    resolve(searchResults(term, imagePage));
+    resolve(imageSearch(term, imagesPage));
   })
     .then(dataReturned => {
       if (
@@ -41,28 +50,33 @@ function loadResults(term) {
         console.log('The data sent by the server is invalid');
         return;
       }
-      const imageList = dataReturned.data.hits;
-      const totalResultsNr = dataReturned.data.totalHits;
-      if (totalResultsNr === 0) {
-        failureCase();
-        return;
-      } else {
-        successfulCase(totalResultsNr);
+      const searchResults = dataReturned.data.hits;
+      const totalResultsNo = dataReturned.data.totalHits;
+      const loadedResultsNo = imageList.length;
+      if (loadedResultsNo === totalResultsNo) {
+        noNewResults();
       }
-      return imageList;
+      if (imagesPage < 2) {
+        if (totalResultsNo === 0) {
+          failureCase();
+          return;
+        } else {
+          successfulCase(totalResultsNo);
+        }
+      }
+      return searchResults;
     })
     .then(images => {
       //   console.log(images);
-      saveResults(images);
-      return images;
+      return addResultsToResultsList(images);
     })
     .then(images => {
       //   console.log(images);
       return createCardList(images);
     })
     .then(imageCards => {
-      console.log(imageCards);
-      addCards(imageCards);
+      //   console.log(imageCards);
+      addCardsToPage(imageCards);
     })
     .then(showLoadMoreBtn)
     .catch(err => {
@@ -75,7 +89,7 @@ function loadResults(term) {
 //------------------------------------------------------------------
 
 // search results
-async function searchResults(term, page) {
+async function imageSearch(term, page) {
   try {
     // if(term = "" ) {
 
@@ -96,19 +110,19 @@ function failureCase() {
   );
 }
 
-function saveResults(results) {
-  imagesLoaded.push(results);
+function addResultsToResultsList(results) {
+  return imageList.push(results);
   //   console.log(imagesLoaded);
 }
 
 function createCardList(cards) {
   //   console.log(cards);
-  const cardList = cards.reduce(
+  return cards.reduce(
     (imageCards, image) => renderCard(image) + imageCards,
     ' '
   );
   //   console.log(cardList);
-  return cardList;
+  //   return cardList;
 }
 function successfulCase(resultsNr) {
   console.log(`I found ${resultsNr} results`);
@@ -165,7 +179,7 @@ function renderCard(cardInfo) {
   `;
 }
 
-function addCards(cards) {
+function addCardsToPage(cards) {
   gallery.innerHTML = cards;
 }
 
@@ -177,8 +191,25 @@ function showLoadMoreBtn() {
   loadMoreBtn.classList.remove('hidden');
 }
 
+function clearResults() {
+  imagesPage = 1;
+  imageList = [];
+  hideLoadMoreBtn();
+}
+
+function noNewResults() {
+  hideLoadMoreBtn();
+  console.log('No new results found');
+  Notify.warning(`We're sorry, but you've reached the end of search results.`);
+}
+
 // searchResults('2', 1);
 
 // load more results
-// function
+
+loadMoreBtn.addEventListeners('click', loadMoreResults());
+function loadMoreResults() {
+  hideLoadMoreBtn();
+  loadResults(filledText);
+}
 //------------------------------------------------------------------

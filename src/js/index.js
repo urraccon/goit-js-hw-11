@@ -71,11 +71,11 @@ function loadResults(term) {
       return addResultsToResultsList(images);
     })
     .then(images => {
-      //   console.log(images);
+      console.log(images);
       return createCardList(images);
     })
     .then(imageCards => {
-      //   console.log(imageCards);
+      console.log(imageCards);
       addCardsToPage(imageCards);
     })
     .then(showLoadMoreBtn)
@@ -129,7 +129,7 @@ function successfulCase(resultsNr) {
 }
 
 function renderCard(cardInfo) {
-  //   console.log(cardInfo);
+  // console.log(cardInfo);
   const {
     webformatURL,
     largeImageURL,

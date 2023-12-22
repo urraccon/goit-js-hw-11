@@ -45,8 +45,9 @@ function loadResults(term) {
         dataReturned === undefined ||
         Object.keys(dataReturned).length === 0
       ) {
-        console.log('The data sent by the server is invalid');
-        return;
+        // console.log('The data sent by the server is invalid');
+        // return;
+        throw 'The data sent by the server is invalid';
       }
       const searchResults = dataReturned.data.hits;
       //   console.log(searchResults);
@@ -56,13 +57,15 @@ function loadResults(term) {
         if (loadedResultsNo === totalResultsNo) {
           debugger;
           noNewResults();
-          return;
+          //   return;
+          throw 'No new results found';
         }
       }
       if (imagesPage < 2) {
         if (totalResultsNo === 0) {
           failureCase();
-          return;
+          //   return;
+          throw 'No results found';
         } else {
           successfulCase(totalResultsNo);
         }
@@ -108,7 +111,6 @@ async function imageSearch(term, page) {
 //------------------------------------------------------------------
 
 function failureCase() {
-  console.log('No results were found');
   Notify.failure(
     'Sorry, there are no image matching your search query. Please try again.'
   );
@@ -203,7 +205,7 @@ function clearResults() {
 
 function noNewResults() {
   hideLoadMoreBtn();
-  console.log('No new results found');
+  //   console.log('No new results found');
   Notify.warning(`We're sorry, but you've reached the end of search results.`);
 }
 

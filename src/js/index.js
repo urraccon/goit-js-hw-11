@@ -14,8 +14,6 @@ let imagesPage = 1;
 let filledText = '';
 // console.dir(searchBox);
 
-hideLoadMoreBtn();
-
 searchBox.addEventListener('submit', pressBtn);
 
 function pressBtn(inputField) {

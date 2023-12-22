@@ -55,6 +55,7 @@ function loadResults(term) {
       if (loadedResultsNo > 0) {
         if (loadedResultsNo === totalResultsNo) {
           noNewResults();
+          return;
         }
       }
       if (imagesPage < 2) {
@@ -202,7 +203,6 @@ function noNewResults() {
   hideLoadMoreBtn();
   console.log('No new results found');
   Notify.warning(`We're sorry, but you've reached the end of search results.`);
-  return;
 }
 
 function nextPage() {

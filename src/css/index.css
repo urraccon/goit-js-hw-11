@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+.hidden {
+  display: hidden;
+}
+
 form {
   padding: 10px;
   display: flex;

@@ -7,6 +7,8 @@ const searchBtn = document.querySelector("[type = 'submit']");
 // console.dir(searchBtn);
 const gallery = document.querySelector('div.gallery');
 const searchBox = document.querySelector('form.search-form');
+const loadMoreBtn = document.querySelector('button.load-more');
+// console.dir(loadMoreBtn);
 let imagesLoaded = [];
 let imagePage = 1;
 // console.dir(searchBox);
@@ -22,10 +24,12 @@ function pressBtn(inputValue) {
   loadResults(searchWord);
 }
 
+// dispaly results
 function loadResults(term) {
   //   debugger;
   imagePage = 1;
   imagesLoaded = [];
+  hideLoadMoreBtn();
   new Promise(resolve => {
     resolve(searchResults(term, imagePage));
   })
@@ -60,6 +64,7 @@ function loadResults(term) {
       console.log(imageCards);
       addCards(imageCards);
     })
+    .then(showLoadMoreBtn)
     .catch(err => {
       console.log('An error occurred while loading the images', err);
     })
@@ -67,7 +72,9 @@ function loadResults(term) {
       console.log('Cards have been created successfully');
     });
 }
+//------------------------------------------------------------------
 
+// search results
 async function searchResults(term, page) {
   try {
     // if(term = "" ) {
@@ -80,6 +87,7 @@ async function searchResults(term, page) {
     console.log('The data request made to the server failed', err);
   }
 }
+//------------------------------------------------------------------
 
 function failureCase() {
   console.log('No results were found');
@@ -161,4 +169,16 @@ function addCards(cards) {
   gallery.innerHTML = cards;
 }
 
+function hideLoadMoreBtn() {
+  loadMoreBtn.classList.add('hidden');
+}
+
+function showLoadMoreBtn() {
+  loadMoreBtn.classList.remove('hidden');
+}
+
 // searchResults('2', 1);
+
+// load more results
+// function
+//------------------------------------------------------------------

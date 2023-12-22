@@ -12,7 +12,7 @@ form {
   /* position: relative; */
   /* align-items: center; */
   justify-content: center;
-  background-color: #613287;
+  background-color: rgb(97, 50, 135);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -34,7 +34,7 @@ input {
   position: relative;
 } */
 
-button {
+button[type='submit'] {
   /* width: fit-content; */
   /* position: absolute; */
   background-color: white;
@@ -64,8 +64,8 @@ svg {
   gap: 1px;
 }
 
-button:focus,
-button:hover {
+button[type='submit']:focus,
+button[type='submit']:hover {
   /* background-color: rgb(226, 142, 254); */
   border-radius: 5px;
 }
@@ -127,10 +127,36 @@ button:hover {
 }
 
 use {
-  fill: #613287;
+  fill: rgb(97, 50, 135);
 }
 
-button:hover use,
-button:focus use {
+button[type='submit']:hover use,
+button[type='submit']:focus use {
   fill: rgb(226, 142, 254);
+}
+
+button.load-more {
+  /* position: absolute; */
+  height: 45px;
+  /* width: 57.2px; */
+  padding: 0px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(97, 50, 135);
+  border-radius: 5px;
+  border: 2px solid rgb(226, 142, 254);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+button.load-more:hover,
+button.load-more:focus {
+  background-color: rgba(226, 142, 254);
+  border: 2px solid rgb(97, 50, 135);
+}
+
+div.load-more-container {
+  display: flex;
+  justify-content: center;
 }

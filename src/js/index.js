@@ -25,14 +25,14 @@ function pressBtn(inputField) {
   newSearch(filledText);
 }
 
-// new search
+// search for results that match the term sent in the search request
 function newSearch(term) {
   clearResults();
   loadResults(term);
 }
 //------------------------------------------------------------------
 
-// dispaly results
+// create cards for images
 function loadResults(term) {
   //   debugger;
   //   clearPage();
@@ -94,7 +94,7 @@ function loadResults(term) {
 }
 //------------------------------------------------------------------
 
-// search results
+// search request
 async function imageSearch(term, page) {
   try {
     // if(term = "" ) {
@@ -213,7 +213,7 @@ function nextPage() {
 }
 // searchResults('2', 1);
 
-// load more results
+// load more images
 loadMoreBtn.addEventListener('click', loadMoreResults);
 function loadMoreResults() {
   hideLoadMoreBtn();

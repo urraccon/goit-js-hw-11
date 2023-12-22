@@ -117,6 +117,7 @@ function addResultsToResultsList(results) {
 
 function createCardList(cards) {
   //   console.log(cards);
+  debugger;
   return cards.reduce(
     (imageCards, image) => renderCard(image) + imageCards,
     ' '

@@ -21,7 +21,7 @@ searchBox.addEventListener('submit', pressBtn);
 function pressBtn(inputField) {
   //   debugger;
   //   console.log(inputValue);
-  inputValue.preventDefault();
+  inputField.preventDefault();
   filledText = inputField.target[0].value;
   //   console.log(searchWord);
   newSearch(filledText);

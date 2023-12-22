@@ -112,8 +112,8 @@ function failureCase() {
 }
 
 function addResultsToResultsList(results) {
-  debugger;
-  imageList.concat(results);
+  //   debugger;
+  imageList = imageList.concat(results);
   return imageList;
   //   console.log(imagesLoaded);
 }

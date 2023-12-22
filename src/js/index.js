@@ -53,8 +53,10 @@ function loadResults(term) {
       const searchResults = dataReturned.data.hits;
       const totalResultsNo = dataReturned.data.totalHits;
       const loadedResultsNo = imageList.length;
-      if (loadedResultsNo === totalResultsNo) {
-        noNewResults();
+      if (loadedResultsNo > 0) {
+        if (loadedResultsNo === totalResultsNo) {
+          noNewResults();
+        }
       }
       if (imagesPage < 2) {
         if (totalResultsNo === 0) {

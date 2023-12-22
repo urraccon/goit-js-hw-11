@@ -25,13 +25,12 @@ function pressBtn(inputField) {
   newSearch(filledText);
 }
 
-//
+// new search
 function newSearch(term) {
   clearResults();
   loadResults(term);
 }
-
-//
+//------------------------------------------------------------------
 
 // dispaly results
 function loadResults(term) {
@@ -118,7 +117,7 @@ function failureCase() {
 
 function addResultsToResultsList(results) {
   //   debugger;
-  imageList = imageList.concat(results);
+  imageList = results.concat(imageList);
   return imageList;
   //   console.log(imagesLoaded);
 }
@@ -215,7 +214,6 @@ function nextPage() {
 // searchResults('2', 1);
 
 // load more results
-
 loadMoreBtn.addEventListener('click', loadMoreResults);
 function loadMoreResults() {
   hideLoadMoreBtn();

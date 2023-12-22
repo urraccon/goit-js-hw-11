@@ -16,8 +16,9 @@ form {
   /* position: relative; */
   /* align-items: center; */
   justify-content: center;
-  background-color: rgb(97, 50, 135);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: rgb(111, 45, 168);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 input {
@@ -25,7 +26,8 @@ input {
   padding: 2px 12px;
   /* padding-right: 43px; */
   height: 30px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border: 2px solid rgba(0, 0, 0, 0.8);
   /* position: relative; */
   /* left: 40.6%; */
@@ -85,8 +87,8 @@ button[type='submit']:hover {
   justify-content: center;
   /* border: 2px solid rgb(226, 142, 254); */
   align-items: center;
-  box-shadow: rgb(226, 142, 254) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(175, 105, 238) 0px 1px 3px 0px,
+    rgba(175, 105, 238) 0px 1px 2px 0px;
   /* gap: 50px; */
   border-radius: 5px;
 }
@@ -131,12 +133,12 @@ button[type='submit']:hover {
 }
 
 use {
-  fill: rgb(97, 50, 135);
+  fill: rgb(111, 45, 168);
 }
 
 button[type='submit']:hover use,
 button[type='submit']:focus use {
-  fill: rgb(226, 142, 254);
+  fill: rgb(175, 105, 238);
 }
 
 button.load-more {
@@ -146,22 +148,31 @@ button.load-more {
   padding: 0px 20px;
   font-size: 14px;
   color: white;
-  background-color: rgb(97, 50, 135);
+  background-color: rgb(111, 45, 168);
   border-radius: 5px;
-  border: 2px solid rgb(226, 142, 254);
+  border: 2px solid rgb(175, 105, 238);
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 30px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.31) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 button.load-more:hover,
 button.load-more:focus {
-  background-color: rgba(226, 142, 254);
-  border: 2px solid rgb(97, 50, 135);
+  background-color: rgba(175, 105, 238);
+  border: 2px solid rgb(111, 45, 168);
 }
 
 div.load-more-container {
   display: flex;
   justify-content: center;
+}
+
+button[type='submit']:active use {
+  fill: rgb(153, 102, 203);
+}
+
+button.load-more:active {
+  background-color: rgb(153, 102, 203);
 }

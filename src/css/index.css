@@ -148,6 +148,7 @@ button.load-more {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.31) 0px 3px 6px;
 }
 
 button.load-more:hover,

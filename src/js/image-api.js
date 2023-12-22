@@ -13,7 +13,7 @@ async function getImages(searchTerm, page) {
     console.log(searchTerm);
     if (searchTerm.includes(' ')) {
       const searchTermURL = searchTerm.split(' ').join('+');
-      console.log(searchTermURL);
+      console.log(`You searched for '${searchTermURL}'`);
       requestResult = await axios.get(
         `/?key=${API_KEY}&q=${searchTermURL}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`
       );

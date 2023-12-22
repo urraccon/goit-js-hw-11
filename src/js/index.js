@@ -74,7 +74,7 @@ async function searchResults(term, page) {
 
     // }
     const requestedData = await getImages(term, page);
-    console.log(requestedData);
+    // console.log(requestedData);
     return requestedData;
   } catch (err) {
     console.log('The data request made to the server failed', err);
@@ -94,12 +94,12 @@ function saveResults(results) {
 }
 
 function createCardList(cards) {
-  console.log(cards);
+  //   console.log(cards);
   const cardList = cards.reduce(
     (imageCards, image) => renderCard(image) + imageCards,
     ' '
   );
-  console.log(cardList);
+  //   console.log(cardList);
   return cardList;
 }
 function successfulCase(resultsNr) {
@@ -108,7 +108,7 @@ function successfulCase(resultsNr) {
 }
 
 function renderCard(cardInfo) {
-  console.log(cardInfo);
+  //   console.log(cardInfo);
   const {
     webformatURL,
     largeImageURL,

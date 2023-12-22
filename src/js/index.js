@@ -49,6 +49,7 @@ function loadResults(term) {
         return;
       }
       const searchResults = dataReturned.data.hits;
+      console.log(searchResults);
       const totalResultsNo = dataReturned.data.totalHits;
       const loadedResultsNo = imageList.length;
       if (loadedResultsNo > 0) {
@@ -67,7 +68,7 @@ function loadResults(term) {
       return searchResults;
     })
     .then(images => {
-      //   console.log(images);
+      console.log(images);
       return addResultsToResultsList(images);
     })
     .then(images => {
@@ -75,7 +76,7 @@ function loadResults(term) {
       return createCardList(images);
     })
     .then(imageCards => {
-      console.log(imageCards);
+      //   console.log(imageCards);
       addCardsToPage(imageCards);
     })
     .then(showLoadMoreBtn)
